@@ -1,0 +1,13 @@
+@media screen and (max-width: 700px) {
+  .col-md-8.col-6 #shipname{
+    width: 100%;
+  }
+}
+.col-md-8.col-6 #shipname{
+  width:70%;
+  margin-bottom: 20px;
+  color:grey
+}
+.col-md-4.col-6.pt-2{
+  color:grey
+}
