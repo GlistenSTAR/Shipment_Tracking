@@ -18,6 +18,11 @@ class Contoller extends Controller
         return view('shipment.create');
     }
 
+    public function edit(Request $req){
+        $shipment = Shipment::find($req->id);
+        return view('shipment.edit', compact("shipment"));
+    }
+
     public function save(Request $req)
     {
         $shipment = new Shipment();
