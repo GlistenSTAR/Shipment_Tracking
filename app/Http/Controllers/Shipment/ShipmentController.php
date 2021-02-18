@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Shipment;
 
-class Contoller extends Controller
+class ShipmentController extends Controller
 {
     //
     public function index(){
@@ -25,7 +25,11 @@ class Contoller extends Controller
 
     public function save(Request $req)
     {
-        $shipment = new Shipment();
+        if($req->id){
+            $shipment = Shipment::find($req->id);
+        } else {
+            $shipment = new Shipment();
+        }
         if(strlen($req->shiperphone)<10&&strlen($req->reciverphone)<10){
             return redirect('create')->with('error', 'Correct input the phone number!');
         }

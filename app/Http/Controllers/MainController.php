@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Shipment;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Shipment;
 
 class MainController extends Controller
 {
