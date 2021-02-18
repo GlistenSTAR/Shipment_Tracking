@@ -36,9 +36,5 @@ class Shipment extends Model
         
     ];
     protected $hidden = [
-        'shipperphone',
-        'shipperemail',
-        'receiverphone',
-        'receiveremail',
     ];
 }
