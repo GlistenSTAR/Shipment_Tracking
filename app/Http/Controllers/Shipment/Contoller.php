@@ -15,7 +15,7 @@ class Contoller extends Controller
         if(strlen($req->shiperphone)<10&&strlen($req->reciverphone)<10){
             return redirect('create')->with('error', 'Correct input the phone number!');
         }
-        if(strlen($req->shipername)==0 || strlen($req->shiperaddress)==0 || strlen($req->shiperemail)==0||strlen($req->shipername)==0 || strlen($req->shiperaddress)==0 || strlen($req->shiperemail)==0 || strlen($req->location)==0 || $req->status=='-----' || strlen($req->date)==0 || strlen($req->time)==0){
+        if(strlen($req->shipername)==0 || strlen($req->shiperaddress)==0 || strlen($req->shiperemail)==0||strlen($req->shipername)==0 || strlen($req->shiperaddress)==0 || strlen($req->shiperemail)==0 || strlen($req->location)==0 || strlen($req->status)==0 || strlen($req->date)==0 || strlen($req->time)==0){
             return redirect('create')->with('error', 'Please input all field!');
         }
         $shipment->shippername = $req->shipername;

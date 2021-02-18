@@ -114,15 +114,10 @@
                   <span style="color:red;font-size:18px">* </span>Status : 
                 </div>
                 <div class="col-md-8 col-6" style="text-right: left">
-                  <select id="shipname" name="status" style="border-radius:5px;">
-                    <option>-----</option>
-                    <option value="send">Send</option>
-                    <option value="pend">Pend</option>
-                    <option value="receive">Receive</option>
-                  </select>
+                  <input type="text" id="shipname" name="status" style="border-radius:5px;">
                 </div>
                 <div class="col-md-4 col-6 pt-2" style="text-align:right; ">
-                  Remarks : 
+                  <span style="color:red;font-size:18px">* </span>Remarks : 
                 </div>
                 <div class="col-md-8 col-6" style="text-right: left">
                   <textarea id="shipname" name="remark" style="border-radius:5px;"></textarea>

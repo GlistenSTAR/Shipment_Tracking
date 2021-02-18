@@ -26,7 +26,7 @@ class CreateShipmentsTable extends Migration
             $table->date('date');
             $table->time('time');
             $table->string('location');
-            $table->enum('status', ['send','pend', 'receive']);
+            $table->string('status');
             $table->string('remarks');
             $table->timestamps();
         });
