@@ -18,9 +18,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [Contoller::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::get('/create', function(){
     return view('shipment.create');

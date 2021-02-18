@@ -9,6 +9,11 @@ use App\Models\Shipment;
 class Contoller extends Controller
 {
     //
+    public function index(){
+        $shipment = Shipment::get();
+        return view('dashboard',compact("shipment"));
+    }
+
     public function save(Request $req)
     {
         $shipment = new Shipment();

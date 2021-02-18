@@ -15,6 +15,30 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
+                    <table class="table table-striped">
+                        <th>
+                            <td align="center">No</td>
+                            <td align="center">Tracking Number</td>
+                            <td align="center">Shipper Name</td>
+                            <td align="center">Receiver Name</td>
+                            <td align="center">Status</td>
+                            <td align="center">Shipment Type</td>
+                            <td align="center">action</td>
+                        </th>
+                        <tbody>
+                            <?php $num=1;?>
+                            @foreach ($shipment as $item)
+                                <tr align="center">
+                                    <td>{{$num++}}</td>
+                                    <td>{{$item->shipmentnumber}}</td>
+                                    <td>{{$item->shippername}}</td>
+                                    <td>{{$item->receivername}}</td>
+                                    <td>{{$item->status}}</td>
+                                    <td>{{$item->type}}</td>
+                                </tr>
+                            @endforeach 
+                        </tbody>
+                    </table>
                     
                 </div>
             </div>
