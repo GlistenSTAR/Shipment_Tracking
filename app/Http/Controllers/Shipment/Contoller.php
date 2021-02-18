@@ -18,6 +18,7 @@ class Contoller extends Controller
         if(strlen($req->shipername)==0 || strlen($req->shiperaddress)==0 || strlen($req->shiperemail)==0||strlen($req->shipername)==0 || strlen($req->shiperaddress)==0 || strlen($req->shiperemail)==0 || strlen($req->location)==0 || strlen($req->status)==0 || strlen($req->date)==0 || strlen($req->time)==0){
             return redirect('create')->with('error', 'Please input all field!');
         }
+        $shipment->shipmentnumber = $req->shipmentnumber;
         $shipment->shippername = $req->shipername;
         $shipment->shipperphone = $req->shiperphone;
         $shipment->shipperaddress = $req->shiperaddress;
@@ -32,6 +33,6 @@ class Contoller extends Controller
         $shipment->status = $req->status;
         $shipment->remarks = $req->remark;
         $shipment->save();
-        return view('auth.login');
+        return view('dashboard');
     }
 }

@@ -11,3 +11,11 @@
 .col-md-4.col-6.pt-2{
   color:grey
 }
+@media screen and (min-width: 750px) {
+  .aaa{
+    align-items: left;
+  }
+}
+.aaa{
+  align-items: right;
+}
