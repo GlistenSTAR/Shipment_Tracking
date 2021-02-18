@@ -14,6 +14,10 @@ class Contoller extends Controller
         return view('dashboard',compact("shipment"));
     }
 
+    public function create(){
+        return view('shipment.create');
+    }
+
     public function save(Request $req)
     {
         $shipment = new Shipment();
@@ -48,6 +52,13 @@ class Contoller extends Controller
         $shipment->expectdate = $req->expectdate;
         $shipment->commit = $req->comment;
         $shipment->save();
-        return view('dashboard');
+        return redirect('dashboard');
+    }
+
+    public function delete(Request $req)
+    {   
+        $flight = Shipment::find($req->id);
+        $flight->delete();
+        return redirect('dashboard');
     }
 }

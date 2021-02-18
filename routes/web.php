@@ -24,6 +24,7 @@ Route::get('/create', function(){
     return view('shipment.create');
 })->middleware(['auth'])->name('create');
 
+Route::get('delete', [Contoller::class, 'delete'])->middleware(['auth'])->name('delete');
 Route::post('saveshipment', [Contoller::class, 'save'])->middleware(['auth'])->name('saveshipment');
 
 require __DIR__.'/auth.php';

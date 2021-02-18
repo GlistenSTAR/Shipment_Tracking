@@ -16,15 +16,15 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table class="table table-striped">
-                        <th>
-                            <td align="center">No</td>
-                            <td align="center">Tracking Number</td>
-                            <td align="center">Shipper Name</td>
-                            <td align="center">Receiver Name</td>
-                            <td align="center">Status</td>
-                            <td align="center">Shipment Type</td>
-                            <td align="center">action</td>
-                        </th>
+                        <thead align="center">
+                            <th >No</th>
+                            <th align="center">Tracking Number</th>
+                            <th align="center">Shipper Name</th>
+                            <th align="center">Receiver Name</th>
+                            <th align="center">Status</th>
+                            <th align="center">Shipment Type</th>
+                            <th align="center">action</th>
+                        </thead>
                         <tbody>
                             <?php $num=1;?>
                             @foreach ($shipment as $item)
@@ -35,6 +35,10 @@
                                     <td>{{$item->receivername}}</td>
                                     <td>{{$item->status}}</td>
                                     <td>{{$item->type}}</td>
+                                    <td>
+                                        <a href="./edit?id=<?php echo $item->id;?>" class="text-success"><i class="fa fa-edit" style="font-size: 20px; margin:5px"></i></a>
+                                        <button del-id={{$item->id}} class="text-danger delete-shipment"><i class="fa fa-bitbucket" style="font-size: 20px; margin:5px"></i></button>
+                                    </td>
                                 </tr>
                             @endforeach 
                         </tbody>
@@ -46,6 +50,13 @@
     </div>
 </x-app-layout>
 <script>
+    $(document).ready(function(){
+        $('.delete-shipment').click(function(){
+            if (window.confirm('Are you sure? This shipment data deleted!')) {
+                window.location="delete?id="+$(this).attr('del-id'); 
+            }
+        });
+    });
     function create(){
         window.location="create"
     }
