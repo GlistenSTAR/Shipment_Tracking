@@ -29,6 +29,15 @@ class CreateShipmentsTable extends Migration
             $table->string('location');
             $table->string('status');
             $table->string('remarks');
+            $table->string('type');
+            $table->string('departuretime');
+            $table->string('destination');
+            $table->time('pickuptime');
+            $table->string('carrier');
+            $table->string('origin');
+            $table->date('pickupdate');
+            $table->date('expectdate');
+            $table->string('commit');
             $table->timestamps();
         });
     }

@@ -23,7 +23,17 @@ class Shipment extends Model
         'time',
         'location',
         'status',
-        'remarks'
+        'remarks',
+        'type',
+        'departuretime',
+        'destination',
+        'pickuptime',
+        'carrier',
+        'origin',
+        'pickupdate',
+        'expectdate',
+        'commit',
+        
     ];
     protected $hidden = [
         'shipperphone',

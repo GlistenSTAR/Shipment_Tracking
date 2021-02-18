@@ -132,7 +132,7 @@
                       <span style="color:red;font-size:18px">* </span>Departure Time : 
                     </div>
                     <div class="col-md-8 col-6" style="text-right: left">
-                      <input type="text" id="shipname" name="departure" style="border-radius:5px;" required>
+                      <input type="time" id="shipname" name="departure" style="border-radius:5px;" required>
                     </div>
                     <div class="col-md-4 col-6 pt-2" style="text-align:right; ">
                       <span style="color:red;font-size:18px">* </span>Destination : 
@@ -162,13 +162,13 @@
                       <span style="color:red;font-size:18px">* </span>Pickup Date : 
                     </div>
                     <div class="col-md-8 col-6" style="text-right: left">
-                      <input type="text" id="shipname" name="pickupdate" style="border-radius:5px;" required>
+                      <input type="date" id="shipname" name="pickupdate" style="border-radius:5px;" required>
                     </div>
                     <div class="col-md-4 col-6 pt-2" style="text-align:right; ">
                       <span style="color:red;font-size:18px">* </span>Expected Delivery Date : 
                     </div>
                     <div class="col-md-8 col-6" style="text-right: left">
-                      <input type="time" id="shipname" name="expectdate" style="border-radius:5px;" required>
+                      <input type="date" id="shipname" name="expectdate" style="border-radius:5px;" required>
                     </div>
                     <div class="col-md-4 col-6 pt-2" style="text-align:right; ">
                       <span style="color:red;font-size:18px">* </span>Comments : 

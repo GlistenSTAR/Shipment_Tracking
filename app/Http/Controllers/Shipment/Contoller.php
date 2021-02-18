@@ -32,6 +32,16 @@ class Contoller extends Controller
         $shipment->location = $req->location;
         $shipment->status = $req->status;
         $shipment->remarks = $req->remark;
+
+        $shipment->type = $req->type;
+        $shipment->departuretime = $req->departure;
+        $shipment->destination = $req->destination;
+        $shipment->pickuptime = $req->pickuptime;
+        $shipment->carrier = $req->Carrier;
+        $shipment->origin = $req->origin;
+        $shipment->pickupdate = $req->pickupdate;
+        $shipment->expectdate = $req->expectdate;
+        $shipment->commit = $req->comment;
         $shipment->save();
         return view('dashboard');
     }
