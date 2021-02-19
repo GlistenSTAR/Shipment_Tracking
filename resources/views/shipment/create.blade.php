@@ -17,6 +17,7 @@
   <div class="py-12">
     <form action="{{route('saveshipment')}}" method="POST">
       @csrf
+      <input type="hidden" value="{{Auth::user()->name}}" name="user">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-2 pb-2" align="center">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="col-md-12 pt-2">

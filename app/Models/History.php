@@ -14,6 +14,7 @@ class History extends Model
         'date',
         'time',
         'location',
+        'user',
         'status',
         'remarks',        
     ];

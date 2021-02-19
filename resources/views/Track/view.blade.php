@@ -52,33 +52,44 @@
         var result = JSON.parse(res);
         console.log(result);
         var element = "";
-        for(var i in result){
-          element += "<div style='border:1px solid grey;border-radius:10px;margin:20px'><i class='fa fa-barcode' style='font-size:100px;text-align:center'></i><h2 style='font-size:32px;color:blue;' align='center'>"+result[i]['shipmentnumber']+"</h2>\
+        for(var i in result[0]){
+          var table = "";
+          for(var j in result[1]){
+            table += "<tr>\
+              <td>"+result[1][j]['date']+"</td>\
+              <td>"+result[1][j]['time']+"</td>\
+              <td>"+result[1][j]['location']+"</td>\
+              <td>"+result[1][j]['status']+"</td>\
+              <td>"+result[1][j]['user']+"</td>\
+              <td>"+result[1][j]['remarks']+"</td>\
+            </tr>"
+          }
+          element += "<div style='border:1px solid grey;border-radius:10px;margin:20px'><i class='fa fa-barcode' style='font-size:100px;text-align:center'></i><h2 style='font-size:32px;color:blue;' align='center'>"+result[0][i]['shipmentnumber']+"</h2>\
             <div class='row'>\
               <div class='col-md-6 pl-5 pr-5' align='left' >\
                 <h4 align='left' class='pl-2 pr-2' style='font-family:bold;font-size:40px; border-bottom:2px solid black'><span >Shipper info</span><h4>\
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>ShipperName : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['shippername']+
+                      +result[0][i]['shippername']+
                   "</div>\
                 </div>\
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>PhoneNumber : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['shipperphone']+
+                      +result[0][i]['shipperphone']+
                   "</div>\
                 </div>\
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>Address : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['shipperaddress']+
+                      +result[0][i]['shipperaddress']+
                   "</div>\
                 </div>\
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>Email : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['shipperemail']+
+                      +result[0][i]['shipperemail']+
                   "</div>\
                 </div>\
               </div>\
@@ -88,25 +99,25 @@
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>ReceiverName : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['receivername']+
+                      +result[0][i]['receivername']+
                   "</div>\
                 </div>\
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>PhoneNumber : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['receiverphone']+
+                      +result[0][i]['receiverphone']+
                   "</div>\
                 </div>\
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>Address : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['receiveraddress']+
+                      +result[0][i]['receiveraddress']+
                   "</div>\
                 </div>\
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>Email : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['receiveremail']+
+                      +result[0][i]['receiveremail']+
                   "</div>\
                 </div>\
               </div>\
@@ -117,59 +128,76 @@
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>Type of Shipperment : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['type']+
+                      +result[0][i]['type']+
                   "</div>\
                 </div>\
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>Courrier : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['courrier']+
+                      +result[0][i]['courrier']+
                   "</div>\
                 </div>\
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>Departure Time : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['departuretime']+
+                      +result[0][i]['departuretime']+
                   "</div>\
                 </div>\
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>Origin : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['origin']+
+                      +result[0][i]['origin']+
                   "</div>\
                 </div>\
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>Destination : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['destination']+
+                      +result[0][i]['destination']+
                   "</div>\
                 </div>\
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>Pickup Date : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['pickupdate']+
+                      +result[0][i]['pickupdate']+
                   "</div>\
                 </div>\
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>Pickup Time : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['pickuptime']+
+                      +result[0][i]['pickuptime']+
                   "</div>\
                 </div>\
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>Expexted Dilvery Date : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['expectdate']+
+                      +result[0][i]['expectdate']+
                   "</div>\
                 </div>\
                 <div class='row' style='font-size:20px;padding:5px;padding-top:10px;padding-bottom:10px'>\
                   <div class='col-md-4' align='left'><b>Comments : </b></div>\
                   <div class='col-md-8'>"
-                      +result[i]['commit']+
+                      +result[0][i]['commit']+
                   "</div>\
                 </div>\
               </div>\
-          </div>";
+          </div>\
+          <div>\
+            <h4 align='left' class='pl-2 mt-3' style='font-family:bold;font-size:40px;margin-left:30px;margin-right:30px; text-align:center;color:blue'><span >Shipment History</span><h4>\
+            <table class='table table-striped' style='width:90%'>\
+              <tr style='background-color:green' algin='center'>\
+                <th>Date</th>\
+                <th>Time</th>\
+                <th>Location</th>\
+                <th>Status</th>\
+                <th>UpdateBy</th>\
+                <th>Remarks</th>\
+              </tr>\
+              <tbody>"+
+                table
+              +"</tbody>\
+            </table>\
+          </div>"
+          ;
         }
         $('#newelement').html(element);
       }).catch(function(err){

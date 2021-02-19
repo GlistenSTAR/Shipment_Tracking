@@ -78,6 +78,7 @@ class ShipmentController extends Controller
         $history->location = $req->location;
         $history->status = $req->status;
         $history->remarks = $req->remark;
+        $history->user = $req->user;
         $history->save();
 
         $shipment->type = $req->type;
