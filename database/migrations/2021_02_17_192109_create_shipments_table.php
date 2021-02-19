@@ -24,11 +24,6 @@ class CreateShipmentsTable extends Migration
             $table->double('receiverphone');
             $table->string('receiveraddress');
             $table->string('receiveremail');
-            $table->date('date');
-            $table->time('time');
-            $table->string('location');
-            $table->string('status');
-            $table->string('remarks');
             $table->string('type')->nullable();
             $table->string('departuretime')->nullable();
             $table->string('destination')->nullable();

@@ -21,7 +21,7 @@
                             <th align="center">Tracking Number</th>
                             <th align="center">Shipper Name</th>
                             <th align="center">Receiver Name</th>
-                            <th align="center">Status</th>
+                            {{-- <th align="center">Status</th> --}}
                             <th align="center">Shipment Type</th>
                             <th align="center">action</th>
                         </thead>
@@ -33,11 +33,11 @@
                                     <td>{{$item->shipmentnumber}}</td>
                                     <td>{{$item->shippername}}</td>
                                     <td>{{$item->receivername}}</td>
-                                    <td>{{$item->status}}</td>
+                                    {{-- <td>{{$item->status}}</td> --}}
                                     <td>{{$item->type}}</td>
                                     <td>
-                                        <a href="./edit?id=<?php echo $item->id;?>" class="text-success"><i class="fa fa-edit" style="font-size: 20px; margin:5px"></i></a>
-                                        <button del-id={{$item->id}} class="text-danger delete-shipment"><i class="fa fa-bitbucket" style="font-size: 20px; margin:5px"></i></button>
+                                        <a href="./edit?id=<?php echo $item->shipmentnumber;?>" class="text-success"><i class="fa fa-edit" style="font-size: 20px; margin:5px"></i></a>
+                                        <button del-id={{$item->shipmentnumber}} class="text-danger delete-shipment"><i class="fa fa-bitbucket" style="font-size: 20px; margin:5px"></i></button>
                                     </td>
                                 </tr>
                             @endforeach 

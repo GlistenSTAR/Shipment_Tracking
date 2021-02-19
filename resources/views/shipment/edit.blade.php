@@ -182,31 +182,31 @@
                     <span style="color:red;font-size:18px">* </span>Date : 
                   </div>
                   <div class="col-md-8 col-6" style="text-right: left">
-                    <input type="date" id="shipname" name="date" value="{{$shipment->date}}" style="border-radius:5px;" required>
+                    <input type="date" id="shipname" name="date" <?php if($history_state) echo 'value='.$history->date;?> style="border-radius:5px;" required>
                   </div>
                   <div class="col-md-4 col-6 pt-2" style="text-align:right; ">
                     <span style="color:red;font-size:18px">* </span>Time : 
                   </div>
                   <div class="col-md-8 col-6" style="text-right: left">
-                    <input type="time" id="shipname" name="time" value="{{$shipment->time}}" style="border-radius:5px;" required>
+                    <input type="time" id="shipname" name="time" <?php if($history_state) echo 'value='.$history->time;?> style="border-radius:5px;" required>
                   </div>
                   <div class="col-md-4 col-6 pt-2" style="text-align:right; ">
                     <span style="color:red;font-size:18px">* </span>Location : 
                   </div>
                   <div class="col-md-8 col-6" style="text-right: left">
-                    <input type="text" id="shipname" name="location" value="{{$shipment->location}}" style="border-radius:5px;" required>
+                    <input type="text" id="shipname" name="location" <?php if($history_state) echo 'value='.$history->location;?> style="border-radius:5px;" required>
                   </div>
                   <div class="col-md-4 col-6 pt-2" style="text-align:right; ">
                     <span style="color:red;font-size:18px">* </span>Status : 
                   </div>
                   <div class="col-md-8 col-6" style="text-right: left">
-                    <input type="text" id="shipname" name="status" value="{{$shipment->status}}" style="border-radius:5px;" required>
+                    <input type="text" id="shipname" name="status" <?php if($history_state) echo 'value='.$history->status;?> style="border-radius:5px;" required>
                   </div>
                   <div class="col-md-4 col-6 pt-2" style="text-align:right; ">
                     <span style="color:red;font-size:18px">* </span>Remarks : 
                   </div>
                   <div class="col-md-8 col-6" style="text-right: left">
-                    <textarea id="shipname" name="remark" style="border-radius:5px;" required>{{$shipment->remarks}}</textarea>
+                    <textarea id="shipname" name="remark" style="border-radius:5px;" required><?php if($history_state) echo $history->remarks;?></textarea>
                   </div>
                 </div>
               </div>
